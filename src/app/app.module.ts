@@ -11,16 +11,24 @@ import { AppComponent } from './app.component';
 
 /** mis componentes 
 
-ng g component new-module/new-component
+ng g component components/contact
 */
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { ParquesComponent } from './components/parques/parques.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { HomeComponent } from './components/home/home.component';
+import { AnimalsComponent } from './components/animals/animals.component';
+import { KeepersComponent } from './components/keepers/keepers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TiendaComponent,
-    ParquesComponent
+    ParquesComponent,
+    ContactComponent,
+    HomeComponent,
+    AnimalsComponent,
+    KeepersComponent
   ],
   imports: [
     BrowserModule,
