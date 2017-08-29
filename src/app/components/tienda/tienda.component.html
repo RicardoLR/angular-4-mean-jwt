@@ -5,10 +5,94 @@
 	Ver informacion atravez de Jquery en angular... 
 </button>
 
-<p id="textoJquery" class="alert alert-warning">
-	Asegurece de tener una compra correcta, solo confie en paginas con HTTPS.
-</p>
+
+<div id="textoJquery" class="alert alert-warning">
+	<h3> ¿Qué es SSL y TLS? </h3>
+</div>
+
+<div style="width: auto; height: 100px; border: 1px solid black;"
+	id="caja">
+	
+
+	El protocolo TLS (seguridad de la capa de transporte) es solo una versión actualizada y más segura de SSL. Si bien aún denominamos a nuestros certificados de seguridad SSL porque es un término más común, al comprar certificados SSL en Symantec, en realidad se compran los certificados TLS más actualizados con la opción de cifrado ECC, RSA o DSA.
+
+</div>
+
+
+<div class="container">
+	
+	<button type="button" class="btn btn-lg btn-info collapsed centra-texto" data-toggle="collapse" 
+
+		data-target="#collapse-basico">
+		
+		Mas informacion
+	</button>
+	
+	<div id="collapse-basico" class="collapse collapse-basico">
+		Problemas principales en la programación de sistemas web
+
+		Gran parte de los problemas de seguridad en las aplicaciones web son causados por la falta de seguimiento en dos rubros muy importantes de los que depende cualquier aplicación, las entradas y salidas del sistema. 
+
+		Además de verificar estos 2 rubros, es importante considerar la exposición accidental de datos que pueden ser empleados en un posible ataque sobre el sistema. Los mensajes de error enviados por el servidor, que suelen ser de gran utilidad durante el proceso de desarrollo de la aplicación, pueden ser empleados maliciosamente cuando siguen apareciendo en un entorno de producción, por lo que es necesario deshabilitar todos estos mensajes y editar algunos otros (como los que se envían cuando el servidor no encuentra algún archivo en particular) los cuales también pueden ser utilizados por los atacantes para obtener información sobre nuestro sistema. 
+
+	</div>
+</div>
 
 
 
 
+<div class="container">
+	
+	<h2 class="centra-texto"> Informacion segura para usuarios </h2>
+
+	
+	<div class="panel-group" id="accordion">
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					
+					<a data-toggle="collapse" 
+						data-parent="#accordion" 
+						href="#collapse1">  
+
+						Certificados SSL
+					</a>
+				</h4>
+			</div>
+			<div id="collapse1" class="panel-collapse collapse in">
+				<div class="panel-body">
+
+				Los certificados SSL (capa de sockets seguros) son una pieza esencial de la seguridad de los sitios web. Al visitar un sitio web con SSL, el certificado SSL del sitio web permite cifrar los datos que se envían, como la información sobre tarjetas de créditos, nombres y direcciones de modo que ningún hacker pueda acceder a ellos. Para comprobar si un sitio web usa SSL correctamente, escriba la dirección del sitio web en nuestro Comprobador de instalación SSL.
+
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">El protocolo TLS</a>
+				</h4>
+			</div>
+			<div id="collapse2" class="panel-collapse collapse">
+				<div class="panel-body">
+		El protocolo TLS (seguridad de la capa de transporte) es solo una versión actualizada y más segura de SSL. Si bien aún denominamos a nuestros certificados de seguridad SSL porque es un término más común, al comprar certificados SSL en Symantec, en realidad se compran los certificados TLS más actualizados con la opción de cifrado ECC, RSA o DSA.
+
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Conclusiones</a>
+				</h4>
+			</div>
+			<div id="collapse3" class="panel-collapse collapse">
+				<div class="panel-body">
+				Navega seguro, no entretes ni entregues informacion en paginas con solo HTTP.
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>

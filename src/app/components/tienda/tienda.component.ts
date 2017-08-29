@@ -20,6 +20,8 @@ export class TiendaComponent implements OnInit {
 		$('#buttonJquery').click( function(){
 			$('#textoJquery').slideToggle();
 		});
+
+		//$("#caja").dotdotdot({});
 	}
 
 }
