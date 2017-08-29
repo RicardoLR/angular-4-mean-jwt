@@ -33,4 +33,9 @@ export class TiendaComponent implements OnInit {
 
 		console.log("event", event);
 	}
+
+
+
+
+
 }

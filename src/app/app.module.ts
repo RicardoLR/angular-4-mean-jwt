@@ -31,6 +31,9 @@ import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.compon
 /** Cargamos mis modulos personalizados */
 import { ModuloEmailModule } from './moduloemail/moduloemail.module';
 
+import { ModuloAdminModule } from './moduloadmin/admin.module';
+
+
 
 @NgModule({
   declarations: [
@@ -52,7 +55,8 @@ import { ModuloEmailModule } from './moduloemail/moduloemail.module';
 
     routing,
 
-    ModuloEmailModule
+    ModuloEmailModule,
+    ModuloAdminModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

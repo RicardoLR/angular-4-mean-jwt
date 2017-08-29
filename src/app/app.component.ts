@@ -9,11 +9,6 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 export class AppComponent{
   
   title = 'Angular 4 con Node JS';
-  emailContacto:string;
 
-
-  ngOnInit(){
-  	this.emailContacto = localStorage.getItem('emailContacto');
-  }
 
 }

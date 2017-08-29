@@ -26,5 +26,7 @@ import { MainEmailComponent } from './main-email/main-email.component';
   ],
   exports: [MainEmailComponent]
 })
+/** en exports, con las etiquetas (componentes) que quiera usar fuera del modulo */
+
 
 export class ModuloEmailModule { }
