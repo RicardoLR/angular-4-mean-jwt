@@ -16,17 +16,4 @@ export class AppComponent{
   	this.emailContacto = localStorage.getItem('emailContacto');
   }
 
-  ngDoCheck(){
-  	console.log("Propiedad DoCheck ejecutandose");
-
-  	console.log("Get Localstorage ", localStorage.getItem('emailContacto')); 
-  	this.emailContacto = localStorage.getItem('emailContacto');
-  }
-
-  borrarEmail(){
-  	localStorage.removeItem('emailContacto');
-
-  	// vaciar todo mi localstorage
-  	// localStorage.clear();
-  }
 }

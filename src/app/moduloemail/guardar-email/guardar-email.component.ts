@@ -1,0 +1,24 @@
+
+import { Component } from '@angular/core';
+
+
+@Component({
+	selector: 'guardar-email',
+	template: `
+		<h1>{{title}}</h1>
+		<input type="text" [(ngModel)]="emailContacto" />
+		<button (click)="guardarEmail()">Guardar email </button>
+	`
+})
+export class GuardarEmailComponent {
+
+	title = "Guardar email";
+	emailContacto: string;
+		
+	constructor() { }
+
+	guardarEmail() {
+		localStorage.setItem('emailContacto', this.emailContacto);
+	}
+
+}

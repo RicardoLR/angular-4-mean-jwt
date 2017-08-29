@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 /* agrego */
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+
+/* Manejo de rutas */
 import { routing, appRoutingProviders } from './app.routing';
 
 
@@ -23,6 +26,12 @@ import { ReadMoreComponent } from './components/read-more/read-more.component';
 
 import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
 
+
+
+/** Cargamos mis modulos personalizados */
+import { ModuloEmailModule } from './moduloemail/moduloemail.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +50,9 @@ import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.compon
     FormsModule,
     HttpModule,
 
-    routing
+    routing,
+
+    ModuloEmailModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
