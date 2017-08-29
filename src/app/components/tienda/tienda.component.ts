@@ -24,4 +24,13 @@ export class TiendaComponent implements OnInit {
 		//$("#caja").dotdotdot({});
 	}
 
+
+	/** Recibimos todo lo que ingresa, tecla por tecla
+
+	@params event (html): De lo insertado en el formulario tiny
+	*/
+	textEditorTiny(event){
+
+		console.log("event", event);
+	}
 }

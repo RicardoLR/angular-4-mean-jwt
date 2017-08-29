@@ -21,6 +21,8 @@ import { AnimalsComponent } from './components/animals/animals.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
 import { ReadMoreComponent } from './components/read-more/read-more.component';
 
+import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { ReadMoreComponent } from './components/read-more/read-more.component';
     HomeComponent,
     AnimalsComponent,
     KeepersComponent,
-    ReadMoreComponent
+    ReadMoreComponent,
+        
+    SimpleTinyComponent
   ],
   imports: [
     BrowserModule,
