@@ -15,16 +15,16 @@ import { KeepersComponent } from './components/keepers/keepers.component';
 
 const appRoutes: Routes = [
 
-	{path: '', component: TiendaComponent},
-	{path: '', redirectTo: 'tienda', pathMatch:'full'},
-	{path: 'tienda', component: TiendaComponent},
-
+	{path: '', component: HomeComponent},
+	{path: '', redirectTo: 'home', pathMatch:'full'},
 	{path: 'home', component: HomeComponent},
+
+	{path: 'tienda', component: TiendaComponent},
 	{path: 'animales', component: AnimalsComponent},
 	{path: 'contacto', component: ContactComponent},
 	{path: 'cuidadores', component: KeepersComponent},
 
-	{path: '**', component: TiendaComponent},
+	{path: '**', component: HomeComponent},
 	
 ];
 

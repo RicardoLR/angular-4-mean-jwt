@@ -1,6 +1,56 @@
 
-<h1> {{title}}</h1>
+<div class="navigation col-lg-12">
+  <nav class="navbar navbar-default">
+
+    <div>
+      <div class="navbar-header">
+        <a [routerLink]="['/home']" class="navbar-brand"> {{title}}</a>
+      </div>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li>
+        <a [routerLink]="['/home']" [routerLinkActive]="['active']" >
+          <span class="glyphicon glyphicon-home"></span> Inicio
+        </a>
+      </li>
+      <li> 
+        <a [routerLink]="['/animales']" [routerLinkActive]="['active']" >
+          Animales
+        </a>
+      </li>
+      <li> 
+        <a [routerLink]="['/contacto']" [routerLinkActive]="['active']" >
+          Contacto
+        </a>
+      </li>
+      <li> 
+        <a [routerLink]="['/cuidadores']" [routerLinkActive]="['active']" >
+          Cuidadores
+        </a>
+      </li>
+      <li> 
+        <a [routerLink]="['/tienda']" [routerLinkActive]="['active']" >
+          Tienda
+        </a>
+      </li>
+
+      <li class="hidden">
+        <span *ngIf='emailContacto'>
+          <strong>
+            su correo: {{emailContacto}}
+          </strong>
+          <button (click)="borrarEmail()">Eliminar mi Email</button>
+        </span>
+      </li>
+
+    </ul>
+
+  </nav>
+</div>
+
 
 <hr>
+
 
 <router-outlet></router-outlet>
