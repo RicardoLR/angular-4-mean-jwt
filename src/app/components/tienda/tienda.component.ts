@@ -4,6 +4,9 @@ import * as $ from 'jquery';
 
 import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
 
+import { traerDeAfuera } from '../../moduloanimations/animation';
+
+
 @Component({
 	selector: 'app-tienda',
 	templateUrl: './tienda.component.html',
@@ -41,7 +44,9 @@ import { trigger,state,style,transition,animate,keyframes } from '@angular/anima
 					style({opacity: 1, transform: 'translateY(10%)',     offset: 1.0})
 				]))
 			),
-		])
+		]),
+
+		traerDeAfuera
 
 	]
 })

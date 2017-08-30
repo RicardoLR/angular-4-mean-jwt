@@ -34,4 +34,21 @@ export const fundido = trigger('FadeIn', [
 
 	])
 
-])
+]);
+
+
+/** Los elementos se cargan desde arriba de la pantalla */
+export const traerDeAfuera = trigger('traerDeAfuera', [
+
+	transition(':enter', [
+		style({
+			opacity: 0,
+			transform: 'translateY(-75%)' // translateX(-75%): de izquida al centro
+		}),
+		animate('500ms linear', style({
+			opacity: 1,
+			transform: 'translateY(0)'
+		}))
+	])
+
+]);
