@@ -8,8 +8,8 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 })
 export class ListComponent{
   
-  title = 'Listar';
-
+  title:string = 'Listar';
+  numbers = [1,2,3,4];
 
   ngOnInit(){
   }

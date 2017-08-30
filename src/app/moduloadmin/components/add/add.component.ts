@@ -8,7 +8,7 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 })
 export class AddComponent{
   
-  title = 'Agregar';
+  title = 'Añadir';
 
   ngOnInit(){
   }

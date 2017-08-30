@@ -8,7 +8,7 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 })
 export class MainComponent{
   
-  title = 'Administración';
+  title = 'Panel de administración';
 
   ngOnInit(){
   }
