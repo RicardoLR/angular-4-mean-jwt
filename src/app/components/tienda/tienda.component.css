@@ -1,17 +1,15 @@
 
-/* Icon when the collapsible content is shown */
+/* collapsible */
 .btn:after {
 	font-family: "Glyphicons Halflings";
 	content: "\e114";
 	float: right;
 	margin-left: 15px;
 }
-
-/* Icon when the collapsible content is hidden */
 .btn.collapsed:after {
 	content: "\e080";
 }
-
+/* FIN collapsible */
 
 
 .collapse-basico{
@@ -19,6 +17,32 @@
 	background-color: white;
 }
 
+
 .centra-texto{
 	text-align: center;
 }
+
+
+/** animaciones CSS3 */
+.boton_transicion{
+	padding: 10px;
+	background-color: #e91e63;
+	color: white;
+	border-radius: 15px;
+	border: 5px solid #ba68c8;
+
+
+	transition: all 2s;
+
+	font-size: 1em;
+	display: inline;
+}
+
+.boton_transicion:hover{
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	border-radius: 10px;
+	background: #f48fb1;
+}
+
