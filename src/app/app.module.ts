@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// para animaciones entre estados
+// npm install --save @angular/animations
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 /* agrego */
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -52,6 +57,8 @@ import { ModuloAdminModule } from './moduloadmin/admin.module';
     BrowserModule,
     FormsModule,
     HttpModule,
+
+    BrowserAnimationsModule,
 
     routing,
 

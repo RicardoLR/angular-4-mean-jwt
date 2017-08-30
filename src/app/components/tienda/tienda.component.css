@@ -46,3 +46,21 @@
 	background: #f48fb1;
 }
 
+
+.caja-animada{
+	background: green;
+	border: 5px solid black;
+	width: 200px;
+	height: 200px;
+}
+
+
+  p {
+    width:200px;
+    background:lightgray;
+    margin: 100px auto;
+    text-align:center;
+    padding:20px;
+    font-size:1.5em;
+  }
+

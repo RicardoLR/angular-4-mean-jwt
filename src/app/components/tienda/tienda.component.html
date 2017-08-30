@@ -1,4 +1,13 @@
 
+<h3>animaciones css3 entre estados</h3>
+
+<a class="boton-activo btn btn-success" 
+	[@marcartrigger]="estadoinicial" (click)="cambiarEstado(estadoinicial)">
+	Activa boton
+</a>
+
+
+<p [@myAwesomeAnimation]='state' (click)="animateMe()"> Borra tus datos </p>
 
 
 <button id="buttonJquery" class="btn btn-block boton_transicion">
