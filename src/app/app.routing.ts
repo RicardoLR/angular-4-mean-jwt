@@ -13,6 +13,10 @@ import { HomeComponent } from './components/home/home.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
 
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+
+
 const appRoutes: Routes = [
 
 	{path: '', component: HomeComponent},
@@ -23,6 +27,9 @@ const appRoutes: Routes = [
 	{path: 'animales', component: AnimalsComponent},
 	{path: 'contacto', component: ContactComponent},
 	{path: 'cuidadores', component: KeepersComponent},
+
+	{path: 'login', component: LoginComponent},
+	{path: 'registro', component: RegistroComponent},
 
 	{path: '**', component: HomeComponent},
 	

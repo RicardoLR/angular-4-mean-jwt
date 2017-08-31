@@ -29,6 +29,10 @@ import { AnimalsComponent } from './components/animals/animals.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
 import { ReadMoreComponent } from './components/read-more/read-more.component';
 
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+
+
 import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
 
 
@@ -37,7 +41,6 @@ import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.compon
 import { ModuloEmailModule } from './moduloemail/moduloemail.module';
 
 import { ModuloAdminModule } from './moduloadmin/admin.module';
-
 
 
 @NgModule({
@@ -51,7 +54,10 @@ import { ModuloAdminModule } from './moduloadmin/admin.module';
     KeepersComponent,
     ReadMoreComponent,
         
-    SimpleTinyComponent
+    SimpleTinyComponent,
+        
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

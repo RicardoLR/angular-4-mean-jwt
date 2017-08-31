@@ -1,56 +1,66 @@
 
-<div class="navigation col-lg-12">
-  <nav class="navbar navbar-default">
+<nav class="navbar navbar-default" role="navigation">
 
-    <div>
-      <div class="navbar-header">
-        <a [routerLink]="['/home']" class="navbar-brand"> {{title}}</a>
-      </div>
-    </div>
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
 
-    <ul class="nav navbar-nav">
-      <li>
-        <a [routerLink]="['/home']" [routerLinkActive]="['active']" >
-          <span class="glyphicon glyphicon-home"></span> Inicio
-        </a>
-      </li>
-      <li> 
-        <a [routerLink]="['/animales']" [routerLinkActive]="['active']" >
-          Animales
-        </a>
-      </li>
-      <li> 
-        <a [routerLink]="['/contacto']" [routerLinkActive]="['active']" >
-          Contacto
-        </a>
-      </li>
-      <li> 
-        <a [routerLink]="['/cuidadores']" [routerLinkActive]="['active']" >
-          Cuidadores
-        </a>
-      </li>
-      <li> 
-        <a [routerLink]="['/tienda']" [routerLinkActive]="['active']" >
-          Informacion extra
-        </a>
-      </li>
+    <a [routerLink]="['/home']" class="navbar-brand"> {{title}}</a>
+  </div>
 
-      <li class="hidden">
-        <span *ngIf='emailContacto'>
-          <strong>
-            su correo: {{emailContacto}}
-          </strong>
-          <button (click)="borrarEmail()">Eliminar mi Email</button>
-        </span>
-      </li>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li>
+				<a [routerLink]="['/home']" [routerLinkActive]="['active']" >
+					<span class="glyphicon glyphicon-home"></span> Inicio
+				</a>
+			</li>
+			<li>
+				<a [routerLink]="['/animales']" [routerLinkActive]="['active']" >
+					Animales
+				</a>
+			</li>
+			<li>
+				<a [routerLink]="['/contacto']" [routerLinkActive]="['active']" >
+					Contacto
+				</a>
+			</li>
+			<li>
+				<a [routerLink]="['/cuidadores']" [routerLinkActive]="['active']" >
+					Cuidadores
+				</a>
+			</li>
+			<li>
+				<a [routerLink]="['/tienda']" [routerLinkActive]="['active']" >
+					Informacion extra
+				</a>
+			</li>
+		</ul>
 
-    </ul>
+		<ul class="nav navbar-nav navbar-right" style="text-align: right;">
+			<li>
+				<a [routerLink]="['/registro']">
+					<span class="glyphicon glyphicon-user"></span>
+					Registro
+				</a>
+			</li>
+			<li>
+				<a [routerLink]="['/login']">
+					<span class="glyphicon glyphicon-log-in"></span>
+					Login
+				</a>
+			</li>
+		</ul>
 
-  </nav>
-</div>
+	</div>
 
-
-<hr>
+</nav>
 
 
 <router-outlet></router-outlet>
