@@ -1,14 +1,12 @@
 import { AppPage } from './app.po';
 
-describe('curso-avanzado-mean-jwt App', () => {
-  let page: AppPage;
+describe('1st tests', () => {
+  it('true is true', () => expect(true).toBe(true));
+});
 
-  beforeEach(() => {
-    page = new AppPage();
-  });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+describe('Hello world', () => { 
+  it('says hello', () => { 
+    expect(helloWorld()).toEqual('Hello world!'); 
   });
 });
