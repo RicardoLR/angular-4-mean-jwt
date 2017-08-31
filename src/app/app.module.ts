@@ -17,7 +17,7 @@ import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
 
-/** mis componentes 
+/** mis componentes
 
 ng g component components/contact
 */
@@ -39,9 +39,15 @@ import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.compon
 
 /** Cargamos mis modulos personalizados */
 import { ModuloEmailModule } from './moduloemail/moduloemail.module';
-
 import { ModuloAdminModule } from './moduloadmin/admin.module';
 
+import { ModalbasicoComponent } from './modals/modalbasico/modalbasico.component';
+
+
+/** mis servicios,  Tambien los puedo cargar en module -> providers [UserService ]
+
+import { UserService  } from '../../services/user.service';
+*/
 
 @NgModule({
   declarations: [
@@ -53,11 +59,12 @@ import { ModuloAdminModule } from './moduloadmin/admin.module';
     AnimalsComponent,
     KeepersComponent,
     ReadMoreComponent,
-        
+
     SimpleTinyComponent,
-        
+
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    ModalbasicoComponent
   ],
   imports: [
     BrowserModule,
