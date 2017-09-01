@@ -1,14 +1,41 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
+
+import { UserService  } from './services/user.service';
+import { UserstorageService  } from './services/userstorage.service';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css'],
+	providers: [UserService, UserstorageService]
 })
-export class AppComponent{
-  
-  title = 'Angular 4 con Node JS';
+export class AppComponent {
 
+	public title;
+	public identity;
+
+	constructor(
+		private _route: ActivatedRoute, private _router: Router,
+		private _userService: UserService,
+		private _userstorageService: UserstorageService,
+	){
+		this.title = 'Angular 4 con Node JS';
+	}
+
+	ngOnInit(){
+		this.identity = JSON.parse( this._userstorageService.getLocal("identity") );
+	}
+
+	ngDoCheck(){
+		this.identity = JSON.parse( this._userstorageService.getLocal("identity") );
+	}
+
+	logout(){
+		this._userstorageService.deleteLocal("identity");
+		this._router.navigate(['/']);
+	}
 
 }
