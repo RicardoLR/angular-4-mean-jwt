@@ -4,9 +4,10 @@ export class User {
 		public _id: string,
 		public name: string,
 		public surname: string,
-		public passoword: string,
-		public role: string,
-		public image: string
+		public email: string,
+		public password: string,
+		public image: string,
+		public rol: string
 	){	}
-	
+
 }

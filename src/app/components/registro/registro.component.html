@@ -13,6 +13,16 @@
 
 		<h1>{{title}}</h1>
 
+		<div class="alert alert-success" *ngIf="status == 'success'">
+			Registro exitoso
+			<a [routerLink]="['/login']"> Ir a login </a>
+		</div>
+
+		<div class="alert alert-danger" *ngIf="status == 'false'">
+			Registro fallido
+		</div>
+
+		<!-- Solocio para borrar form si esta mal algo,  (ngSubmit)="onSubmit(); registerForm.reset();" -->
 		<form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-10">
 			<p>
 				<label>Nombre</label>
@@ -25,14 +35,19 @@
 				<span *ngIf="!surname.valid && surname.touched">Apellidos obligatorio</span>
 			</p>
 			<p>
+				<label>Rol</label>
+				<input type="text" name="name" #rol="ngModel" [(ngModel)]="user.rol" class="form-control" required />
+				<span *ngIf="!rol.valid && rol.touched">Rol obligatorio</span>
+			</p>
+			<p>
 				<label>Email</label>
 				<input type="email" name="name" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
-				<span *ngIf="!email.valid && email.touched">Apellidos obligatorio</span>
+				<span *ngIf="!email.valid && email.touched">email obligatorio</span>
 			</p>
 			<p>
 				<label>Contraseña</label>
 				<input type="text" name="name" #password="ngModel" [(ngModel)]="user.password" class="form-control" required />
-				<span *ngIf="!password.valid && password.touched">Apellidos obligatorio</span>
+				<span *ngIf="!password.valid && password.touched">password obligatorio</span>
 			</p>
 
 			<input type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!registerForm.form.valid" />
