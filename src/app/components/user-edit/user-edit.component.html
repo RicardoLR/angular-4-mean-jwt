@@ -1,0 +1,49 @@
+
+
+
+	<div class="col-md-6 offset-col-md-3">
+
+		<h1>{{title}}</h1>
+
+		<div class="alert alert-success" *ngIf="status == 'success'">
+			Actualizacion exitosa
+			<a [routerLink]="['/']"> Ir a inicio </a>
+		</div>
+
+		<div class="alert alert-danger" *ngIf="status == 'false'">
+			Actualizacion fallida
+		</div>
+
+		<!-- Solocio para borrar form si esta mal algo,  (ngSubmit)="onSubmit(); updateForm.reset();" -->
+		<form #updateForm="ngForm" (ngSubmit)="onSubmit()">
+			<p>
+				<label>Nombre</label>
+				<input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />
+				<span *ngIf="!name.valid && name.touched">Nombre obligatorio</span>
+			</p>
+			<p>
+				<label>Apellidos</label>
+				<input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required />
+				<span *ngIf="!surname.valid && surname.touched">Apellidos obligatorio</span>
+			</p>
+			<p>
+				<label>Rol </label>
+				<input type="text" name="rol" #rol="ngModel" [(ngModel)]="user.rol" class="form-control" required />
+				<span *ngIf="!rol.valid && rol.touched">Rol obligatorio</span>
+			</p>
+			<p>
+				<label>Email</label>
+				<input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
+				<span *ngIf="!email.valid && email.touched">email obligatorio</span>
+			</p>
+
+			<p>
+				<label>Subir imagen de perfil</label>
+				<input type="file" placeholder="subir imagen" (change)="fileChangeEvent($event)"/>
+			</p>
+
+
+			<input type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!updateForm.form.valid" />
+		</form>
+
+	</div>

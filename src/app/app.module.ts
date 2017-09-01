@@ -42,6 +42,7 @@ import { ModuloEmailModule } from './moduloemail/moduloemail.module';
 import { ModuloAdminModule } from './moduloadmin/admin.module';
 
 import { ModalbasicoComponent } from './modals/modalbasico/modalbasico.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 
 /** mis servicios,  Tambien los puedo cargar en module -> providers [UserService ]
@@ -64,7 +65,8 @@ import { UserService  } from '../../services/user.service';
 
     LoginComponent,
     RegistroComponent,
-    ModalbasicoComponent
+    ModalbasicoComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

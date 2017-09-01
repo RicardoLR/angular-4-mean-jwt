@@ -15,6 +15,7 @@ import { KeepersComponent } from './components/keepers/keepers.component';
 
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 
 const appRoutes: Routes = [
@@ -30,9 +31,10 @@ const appRoutes: Routes = [
 
 	{path: 'login', component: LoginComponent},
 	{path: 'registro', component: RegistroComponent},
+	{path: 'mis-datos', component: UserEditComponent},
 
 	{path: '**', component: HomeComponent},
-	
+
 ];
 
 
