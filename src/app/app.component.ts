@@ -20,10 +20,11 @@ import { User } from './models/user';
 export class AppComponent {
 
 	public title:string;
-	public identity:string;
+	public identity;
 
 	public url:string;
 	public user: User;
+	public url_image_user:string;
 
 	constructor(
 		private _route: ActivatedRoute, private _router: Router,
@@ -31,9 +32,10 @@ export class AppComponent {
 		private _userstorageService: UserstorageService,
 	){
 		this.title = 'Angular 4 con Node JS';
-	    this.url = GlobalService.url;
-	    this.identity = JSON.parse( this._userstorageService.getLocal("identity") );
-	    this.user = JSON.parse( this._userstorageService.getLocal("identity") );
+		this.url = GlobalService.url;
+		this.identity = JSON.parse( this._userstorageService.getLocal("identity") );
+		this.user = JSON.parse( this._userstorageService.getLocal("identity") );
+
 	}
 
 	ngOnInit(){
@@ -41,11 +43,18 @@ export class AppComponent {
 	}
 
 	ngDoCheck(){
-		this.identity = JSON.parse( this._userstorageService.getLocal("identity") );
+
+		if(this._userstorageService.getLocal("identity") ){
+			this.identity = JSON.parse( this._userstorageService.getLocal("identity") );
+
+			if(this.identity.image)
+				this.url_image_user = this.url+'/usuario/image/'+this.identity.image;
+		}
+
 	}
 
 	logout(){
-		this._userstorageService.deleteLocal("identity");
+		this.identity= this._userstorageService.deleteLocal("identity");
 		this._router.navigate(['/']);
 	}
 

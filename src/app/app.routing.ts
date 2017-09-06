@@ -18,6 +18,8 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 
+import { AnimalDetailsComponent } from './animal/animal-details/animal-details.component';
+
 const appRoutes: Routes = [
 
 	{path: '', component: HomeComponent},
@@ -32,6 +34,10 @@ const appRoutes: Routes = [
 	{path: 'login', component: LoginComponent},
 	{path: 'registro', component: RegistroComponent},
 	{path: 'mis-datos', component: UserEditComponent},
+
+
+	{path: 'animal/:id', component: AnimalDetailsComponent},
+
 
 	{path: '**', component: HomeComponent},
 

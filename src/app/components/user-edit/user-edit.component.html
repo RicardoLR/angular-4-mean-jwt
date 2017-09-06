@@ -37,8 +37,8 @@
 				<span *ngIf="!email.valid && email.touched">email obligatorio</span>
 			</p>
 
-			<div class="imagen-for-edit" *ngIf="user.image && user.image != 'null'">
-				<img src="{{ url + '/usuario/image/' + user.image}}" style="width: 60px;">
+			<div class="imagen-for-edit" *ngIf="urlImageUser">
+				<img src="{{ urlImageUser }}" style="width: 60px;">
 			</div>
 
 			<p>

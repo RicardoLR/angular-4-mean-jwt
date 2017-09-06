@@ -28,8 +28,8 @@ export class UserEditComponent implements OnInit {
 	public token: string;
 
   public status:string;
-
   public url: string;
+  public urlImageUser: string;
 
   constructor(
     private _route: ActivatedRoute, private _router: Router,
@@ -38,36 +38,52 @@ export class UserEditComponent implements OnInit {
     private _userUploadService : UploadService
   ) {
     this.title = "Editar Datos";
-    this.identity = JSON.parse( this._userstorageService.getLocal("identity") );
-    this.identity = JSON.parse( this._userstorageService.getLocal("token") );
+    this.token = JSON.parse( this._userstorageService.getLocal("token") );
     this.user = JSON.parse( this._userstorageService.getLocal("identity") );
 
     this.url = GlobalService.url;
-    console.log("this.user", this.user);
   }
 
   ngOnInit() {
+    
+
+    if(this._userstorageService.getLocal("identity") ){
+
+      this.identity = JSON.parse( this._userstorageService.getLocal("identity")  );
+
+        if(this.identity.image)
+          this.urlImageUser = this.url+'/usuario/image/'+this.identity.image;
+    }
+
   }
 
   onSubmit(){
+    this.urlImageUser = null;
+
     this._userService.update(this.user).subscribe(
       response => {
         if(!response.usuario){
           console.log("response", response);
           this.status = "error";
         }else{
-          this._userstorageService.saveLocal("identity", JSON.stringify(this.user));
+          
+          this._userstorageService.saveLocal("identity", this.user );
           this.status = "success";
 
+          let urlEdit = GlobalService.url+'/usuario/image/'+this.identity._id;
+
           this._userUploadService.makeFileRequest(
-            GlobalService.url+'/usuario/image/'+this.identity._id,
+            urlEdit,
             [],
             this.filesToUpload,
-            this.token,
+            this._userstorageService.getLocal("token"),
             'image'
           ).then( (result:any)=>{
+
             this.user.image = result.image;
-            this._userstorageService.saveLocal("identity", JSON.stringify(this.user));
+
+            this._userstorageService.saveLocal("identity", this.user );
+            this.urlImageUser = this.url + '/usuario/image/' + this.user.image;
           });
         }
       },

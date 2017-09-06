@@ -20,6 +20,9 @@ export class UploadService {
   }
 
   makeFileRequest(url:string, params:Array<string>, files:Array<File>, token:string, name:string){
+      
+    console.log("url", url);
+    
     //let params = JSON.stringify(user_to_register);
     let headers = new Headers({'Content-Type':'application/json'});
 
@@ -42,7 +45,7 @@ export class UploadService {
         }
       }
 
-      xhr.open('POST', url, true);
+      xhr.open('PUT', url, true);
       xhr.setRequestHeader('Authorization', this._userstorageService.getLocal('token') );
       xhr.send(formData);
     })

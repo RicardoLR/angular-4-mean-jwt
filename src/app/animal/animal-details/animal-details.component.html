@@ -1,0 +1,30 @@
+
+<div class="row">
+	
+	<div class="animal-head-card col-lg-12" *ngIf="animal">
+			
+		<div *ngIf="urlimage" class="col-sm-4 col-xs-12 pull-left">
+			<img src="{{urlimage}}" alt="{{animal.name}}">
+		</div>
+
+		<div class="animal-data col-sm-8 col-xs-12 pull-left">
+			
+			<h1> {{animal.name}} </h1>
+			<p> {{animal.usuario.name}} - {{animal.usuario.surname}} </p>
+			<p> {{animal.year}} </p>
+			<p> {{animal.date}} </p>
+			<p> {{animal.description}} </p>
+			<p> {{animal.image}} </p>
+
+		</div>	
+		
+	</div>
+
+</div>
+
+
+<div class="animal-box" *ngIf="!animal">
+		
+	<h1> No exite animal </h1>
+			
+</div>

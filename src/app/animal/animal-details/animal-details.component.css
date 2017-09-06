@@ -1,0 +1,12 @@
+
+
+.row{
+	margin: 20px;
+	background-color: gray;	
+}
+
+.animal-head-card img{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}

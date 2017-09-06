@@ -15,6 +15,8 @@ export class UserstorageService {
 
 	deleteLocal(nombre){
 		localStorage.removeItem(nombre);
+
+		return null;
 	}
 
 }
