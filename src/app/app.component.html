@@ -61,7 +61,7 @@
 		<ul class="nav navbar-nav navbar-right" style="text-align: right;" *ngIf="identity">
 				
 			<li class="avatar">
-				<img src="{{ url + '/usuario/image/' + user.image}}" >
+				<img src="{{ url+'/usuario/image/'+user.image }}" />
 			</li>
 
 			<li class="dropdown">
@@ -71,7 +71,7 @@
 
 				<ul class="dropdown-menu" *ngIf="identity">
 					
-					<li *ngIf="identity && identity.role = 'ROLE_ADMIN'">
+					<li *ngIf="identity && identity.rol == 'ROLE_ADMIN'">
 						<a [routerLink]="['/admin-panel']" >
 							<span class="glyphicon glyphicon-wrench"></span>
 							Administración

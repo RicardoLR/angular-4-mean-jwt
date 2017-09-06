@@ -19,8 +19,8 @@ import { User } from './models/user';
 })
 export class AppComponent {
 
-	public title:string;;
-	public identity:string;;
+	public title:string;
+	public identity:string;
 
 	public url:string;
 	public user: User;
@@ -32,6 +32,7 @@ export class AppComponent {
 	){
 		this.title = 'Angular 4 con Node JS';
 	    this.url = GlobalService.url;
+	    this.identity = JSON.parse( this._userstorageService.getLocal("identity") );
 	    this.user = JSON.parse( this._userstorageService.getLocal("identity") );
 	}
 

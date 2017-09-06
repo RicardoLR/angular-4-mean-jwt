@@ -11,9 +11,15 @@ import { AddComponent } from './components/add/add.component';
 import { ListComponent } from './components/list/list.component';
 import { EditComponent } from './components/edit/edit.component';
 
+
+// ======================= mis Guards =======================
+import {AdminGuard} from '../guards/admin.guard';
+
+
 /** ejemplo de turas hijas, como:  
 
 	http://localhost:4200/admin-panel/listado
+	http://localhost:4200/admin-panel/crear
 	http://localhost:4200/admin-panel/aditar
 
 
@@ -23,6 +29,7 @@ const adminRouter: Routes = [
 	{
 		path: 'admin-panel',
 		component: MainComponent,
+		canActivate: [AdminGuard],
 		children: [
 			{path:'', redirectTo: 'listado', pathMatch:'full'},
 

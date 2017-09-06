@@ -19,6 +19,12 @@ import { EditComponent } from './components/edit/edit.component';
 import { AdminRoutingModule } from './admin-routing.module';
 
 
+// ======================= mis Guards =======================
+import {AdminGuard} from '../guards/admin.guard';
+import { UserstorageService  } from '../services/userstorage.service';
+import { UserService  } from '../services/user.service';
+
+
 @NgModule({
 	declarations: [
 		MainComponent,
@@ -39,6 +45,11 @@ import { AdminRoutingModule } from './admin-routing.module';
 		AddComponent,
 		ListComponent,
 		EditComponent
+	],
+	providers: [
+		UserstorageService,
+		UserService,
+		AdminGuard
 	]
 })
 
