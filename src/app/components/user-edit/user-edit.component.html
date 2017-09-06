@@ -37,6 +37,10 @@
 				<span *ngIf="!email.valid && email.touched">email obligatorio</span>
 			</p>
 
+			<div class="imagen-for-edit" *ngIf="user.image && user.image != 'null'">
+				<img src="{{ url + '/usuario/image/' + user.image}}" style="width: 60px;">
+			</div>
+
 			<p>
 				<label>Subir imagen de perfil</label>
 				<input type="file" placeholder="subir imagen" (change)="fileChangeEvent($event)"/>

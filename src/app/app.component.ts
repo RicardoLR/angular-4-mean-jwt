@@ -1,9 +1,14 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+import { GlobalService  } from './services/global.service';
 
 import { UserService  } from './services/user.service';
 import { UserstorageService  } from './services/userstorage.service';
+
+
+import { User } from './models/user';
+
 
 
 @Component({
@@ -14,8 +19,11 @@ import { UserstorageService  } from './services/userstorage.service';
 })
 export class AppComponent {
 
-	public title;
-	public identity;
+	public title:string;;
+	public identity:string;;
+
+	public url:string;
+	public user: User;
 
 	constructor(
 		private _route: ActivatedRoute, private _router: Router,
@@ -23,6 +31,8 @@ export class AppComponent {
 		private _userstorageService: UserstorageService,
 	){
 		this.title = 'Angular 4 con Node JS';
+	    this.url = GlobalService.url;
+	    this.user = JSON.parse( this._userstorageService.getLocal("identity") );
 	}
 
 	ngOnInit(){

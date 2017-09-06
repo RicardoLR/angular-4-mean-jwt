@@ -1,20 +1,20 @@
 
 <nav class="navbar navbar-default" role="navigation">
 
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
 
-    <a [routerLink]="['/home']" class="navbar-brand"> {{title}}</a>
-  </div>
+		<a [routerLink]="['/home']" class="navbar-brand"> {{title}}</a>
+	</div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
 			<li>
 				<a [routerLink]="['/home']" [routerLinkActive]="['active']" >
@@ -59,25 +59,38 @@
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right" style="text-align: right;" *ngIf="identity">
+				
+			<li class="avatar">
+				<img src="{{ url + '/usuario/image/' + user.image}}" >
+			</li>
+
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown">
 					{{identity.name}} <span class="caret"></span>
 				</a>
 
-        <ul class="dropdown-menu" *ngIf="identity">
-          <li>
-            <a [routerLink]="['/mis-datos']" >
-              <span class="glyphicon glyphicon-cog"></span>
-              Mis datos
-            </a>
-          </li>
-          <li>
-            <a (click)="logout()">
-              <span class="glyphicon glyphicon-log.out"></span>
-              Salir
-            </a>
-          </li>
-        </ul>
+				<ul class="dropdown-menu" *ngIf="identity">
+					
+					<li *ngIf="identity && identity.role = 'ROLE_ADMIN'">
+						<a [routerLink]="['/admin-panel']" >
+							<span class="glyphicon glyphicon-wrench"></span>
+							Administración
+						</a>							
+					</li>
+
+					<li>
+						<a [routerLink]="['/mis-datos']" >
+							<span class="glyphicon glyphicon-cog"></span>
+							Mis datos
+						</a>
+					</li>
+					<li>
+						<a (click)="logout()">
+							<span class="glyphicon glyphicon-log.out"></span>
+							Salir
+						</a>
+					</li>
+				</ul>
 
 			</li>
 		</ul>

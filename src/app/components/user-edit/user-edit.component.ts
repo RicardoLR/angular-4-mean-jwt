@@ -29,6 +29,8 @@ export class UserEditComponent implements OnInit {
 
   public status:string;
 
+  public url: string;
+
   constructor(
     private _route: ActivatedRoute, private _router: Router,
     private _userService : UserService,
@@ -40,6 +42,7 @@ export class UserEditComponent implements OnInit {
     this.identity = JSON.parse( this._userstorageService.getLocal("token") );
     this.user = JSON.parse( this._userstorageService.getLocal("identity") );
 
+    this.url = GlobalService.url;
     console.log("this.user", this.user);
   }
 
