@@ -20,6 +20,7 @@ export class ListComponent{
 	public title:string = 'Listar';
 
 	public animales:Animal[];
+	public busqueda;
 
 	constructor(
 		private _route: ActivatedRoute, 
@@ -27,12 +28,16 @@ export class ListComponent{
 		
 		private _animalService : AnimalService
 	) {
-		this.title = 'Entrar';
+		this.title = 'Listado de animales';
 
 	}
 
 
 	ngOnInit(){
+		this._getAnimals();
+	}
+
+	_getAnimals(){
 		this._animalService.getListAnimal().subscribe(
 			response =>{
 				if(!response.animals) this._router.navigate(['/']);
@@ -42,7 +47,23 @@ export class ListComponent{
 			error =>{
 				
 			}
-		);
+		);		
+	}
+
+
+	_deleteAnimal(id){
+		
+
+		this._animalService.deleteAnimal(id).subscribe(
+			response => {
+				if(!response.animal) alert("problema en servidor");
+
+				this._getAnimals();
+			},
+			error=>{
+				alert("Error en servidor");
+			}
+		)
 	}
 
 }

@@ -46,6 +46,7 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AnimalDetailsComponent } from './animal/animal-details/animal-details.component';
 
 
+
 /** mis servicios,  Tambien los puedo cargar en module -> providers [UserService ]
 
 import { UserService  } from '../../services/user.service';
@@ -69,6 +70,7 @@ import { UserService  } from '../../services/user.service';
     ModalbasicoComponent,
     UserEditComponent,
     AnimalDetailsComponent
+    
   ],
   imports: [
     BrowserModule,

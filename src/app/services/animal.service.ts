@@ -52,4 +52,17 @@ export class AnimalService {
 		return this._http.put(this.url+"/animal/"+animal._id, animal, {headers: headers}).map( res => res.json());
 	}
 
+	deleteAnimal(id){
+
+		let headers = new Headers({
+			'Content-Type':'application/json',
+			'Authorization': this._userstorageService.getLocal('token')
+		});
+
+		let option = new RequestOptions({headers: headers});
+
+		return this._http.delete(this.url+"/animal/"+id, option).map( res => res.json());
+	}
+
+
 }

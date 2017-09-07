@@ -24,13 +24,17 @@ import {AdminGuard} from '../guards/admin.guard';
 import { UserstorageService  } from '../services/userstorage.service';
 import { UserService  } from '../services/user.service';
 
+import { BusquedaPipe } from '../pipe/busqueda.pipe';
+
 
 @NgModule({
 	declarations: [
 		MainComponent,
 		AddComponent,
 		ListComponent,
-		EditComponent
+		EditComponent,
+
+		BusquedaPipe
 	],
 	imports: [
 		CommonModule,
