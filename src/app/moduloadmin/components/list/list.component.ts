@@ -8,11 +8,15 @@ import { AnimalService  } from '../../../services/animal.service';
 import { GlobalService  } from '../../../services/global.service';
 
 
+import {entradaizq} from '../../animation-menu-izq'
+
+
 @Component({
 	selector: 'list-main',
 	templateUrl: './list.component.html',
 	styleUrls: ['./list.component.css'],
-	providers: [AnimalService]
+	providers: [AnimalService],
+	animations: [entradaizq]
 
 })
 export class ListComponent{
@@ -21,6 +25,7 @@ export class ListComponent{
 
 	public animales:Animal[];
 	public busqueda;
+
 
 	constructor(
 		private _route: ActivatedRoute, 

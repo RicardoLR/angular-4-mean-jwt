@@ -10,11 +10,14 @@ import { UploadService  } from '../../../services/upload.service';
 import { UserstorageService  } from '../../../services/userstorage.service';
 
 
+import {entradaizq} from '../../animation-menu-izq'
+
 @Component({
 	selector: 'add-main',
 	templateUrl: './add.component.html',
 	styleUrls: ['./add.component.css'],
-	providers: [AnimalService, UploadService, UserstorageService]
+	providers: [AnimalService, UploadService, UserstorageService],
+	animations: [entradaizq]
 })
 export class AddComponent{
 	

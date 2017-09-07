@@ -9,13 +9,17 @@ import { GlobalService  } from '../../../services/global.service';
 import { UploadService  } from '../../../services/upload.service';
 import { UserstorageService  } from '../../../services/userstorage.service';
 
+import {entradaizq} from '../../animation-menu-izq'
+
+
 
 // usamos el templado de add
 @Component({
 	selector: 'edit-main',
 	templateUrl: '../add/add.component.html',
 	styleUrls: ['./edit.component.css'],
-	providers: [AnimalService, UploadService, UserstorageService]
+	providers: [AnimalService, UploadService, UserstorageService],
+	animations: [entradaizq]
 })
 export class EditComponent{
 	

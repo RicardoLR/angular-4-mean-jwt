@@ -1,0 +1,9 @@
+
+
+.animal-imagen-mask img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+
+	overflow: hidden; /** si se sale que lo oculte */
+}

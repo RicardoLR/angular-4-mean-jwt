@@ -1,4 +1,25 @@
 
-<div class="col-lg-12">
-	
+<div class="row">
+	<div class="col-xs-12">
+		<h1>{{title}}</h1>
+	</div>
 </div>
+
+
+<div class="col-sm-6 col-md-4" *ngFor="let usuario of keepers">
+	<div class="thumbnail">
+		
+		<div class="usuario-imagen-mask">
+			<img src="{{url + '/usuario/image/'+usuario.image }}" alt="{{usuario.name}}" *ngIf="usuario.image">
+
+			<img src="http://via.placeholder.com/150x150" *ngIf="!usuario.image">
+		</div>
+
+		<div class="caption">
+			<h3>{{usuario.name}}</h3>
+			<a [routerLink]="['/usuario', usuario._id]" > {{usuario.name}} </a>
+		</div>
+
+	</div>
+</div>
+

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 import { Observable  } from 'rxjs/Observable';
@@ -53,6 +53,14 @@ export class UserService {
       .map( res => res.json());
   }
 
+  getListKeeper(){
+    let headers = new Headers({
+      'Content-Type':'application/json'
+    });
+    let options = new RequestOptions({headers:headers});
+
+    return this._http.get(this.url+"/keepers", options).map( res => res.json());
+  }
 
 
 }
